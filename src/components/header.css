@@ -1,0 +1,8 @@
+header {
+  min-height: 10vh;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid var(--primary-color);
+}
