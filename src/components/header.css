@@ -4,5 +4,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--sixth-color);
+  background-color: var(--primary-color);
+  color: var(--sixth-color);
 }
