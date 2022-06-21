@@ -10,12 +10,14 @@ const Content = () => {
 
   return (
     <div className="content">
-      <p>Contacts</p>
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          Add contact
-        </Button>
+      <div className="form">
+        <div className="line">
+          <p>Contacts</p>
 
+          <Button variant="primary" onClick={handleShow}>
+            Add contact
+          </Button>
+        </div>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
@@ -30,7 +32,7 @@ const Content = () => {
             </Button>
           </Modal.Footer>
         </Modal>
-      </>
+      </div>
     </div>
   );
 };

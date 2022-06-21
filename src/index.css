@@ -15,3 +15,9 @@
   --sixth-color: #614124;
   --seventh-color: #fff4c9;
 }
+
+/* overwrite bootstrap */
+
+p {
+  margin: 0;
+}
