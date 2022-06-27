@@ -1,12 +1,14 @@
 import "./content.css";
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import Clock from "./Clock";
 
 const Content = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [date, setDate] = useState(new Date());
 
   return (
     <div className="content">
@@ -32,6 +34,10 @@ const Content = () => {
             </Button>
           </Modal.Footer>
         </Modal>
+      </div>
+      <div className="clock">
+        <h4>Time :</h4>
+        <Clock date={date} setDate={setDate} />
       </div>
     </div>
   );
