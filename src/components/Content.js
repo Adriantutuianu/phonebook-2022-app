@@ -10,6 +10,34 @@ const Content = () => {
   const handleShow = () => setShow(true);
   const [date, setDate] = useState(new Date());
 
+  const phonebookList = [
+    {
+      name: "Name1",
+      surname: "Surname1",
+      phone: "07927000001",
+    },
+    {
+      name: "Name2",
+      surname: "Surname2",
+      phone: "07927000002",
+    },
+    {
+      name: "Name3",
+      surname: "Surname3",
+      phone: "07927000003",
+    },
+    {
+      name: "Name4",
+      surname: "Surname4",
+      phone: "07927000004",
+    },
+    {
+      name: "Name5",
+      surname: "Surname5",
+      phone: "07927000005",
+    },
+  ];
+
   return (
     <div className="content">
       <div className="form">
