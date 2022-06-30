@@ -5,10 +5,10 @@ import Clock from "./Clock";
 
 const Content = () => {
   const [show, setShow] = useState(false);
+  const [date, setDate] = useState(new Date());
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [date, setDate] = useState(new Date());
 
   const phonebookList = [
     {
