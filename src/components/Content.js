@@ -36,8 +36,12 @@ const Content = () => {
   const [date, setDate] = useState(new Date());
   const [list, setList] = useState(initialList);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleCloseModal = () => setShow(false);
+  const handleShowModal = () => setShow(true);
+  const handleSubmit = () => {
+    setShow(false);
+    // extract form data and add it to the list
+  };
 
   return (
     <div className="content">
@@ -45,20 +49,20 @@ const Content = () => {
         <div className="line">
           <p>Contacts</p>
 
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="primary" onClick={handleShowModal}>
             Add contact
           </Button>
         </div>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleCloseModal}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary" onClick={handleCloseModal}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleSubmit}>
               Save Changes
             </Button>
           </Modal.Footer>
