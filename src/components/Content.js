@@ -1,6 +1,6 @@
 import "./content.css";
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, ListGroup } from "react-bootstrap";
 import Clock from "./Clock";
 
 const initialList = [
@@ -43,12 +43,16 @@ const Content = () => {
     // extract form data and add it to the list
   };
 
+  const displayedList = list.map((item) => {
+    return <ListGroup.Item>{item.name}</ListGroup.Item>;
+  });
+
   return (
     <div className="content">
       <div className="form">
         <div className="line">
           <p>Contacts</p>
-
+          <ListGroup>{displayedList}</ListGroup>
           <Button variant="primary" onClick={handleShowModal}>
             Add contact
           </Button>
@@ -59,11 +63,11 @@ const Content = () => {
           </Modal.Header>
           <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Close
+            <Button variant="danger" onClick={handleCloseModal}>
+              Cancel
             </Button>
             <Button variant="primary" onClick={handleSubmit}>
-              Save Changes
+              Create Contact
             </Button>
           </Modal.Footer>
         </Modal>
