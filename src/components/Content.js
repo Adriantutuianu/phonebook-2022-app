@@ -3,40 +3,41 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Clock from "./Clock";
 
+const initialList = [
+  {
+    name: "Name1",
+    surname: "Surname1",
+    phone: "07927000001",
+  },
+  {
+    name: "Name2",
+    surname: "Surname2",
+    phone: "07927000002",
+  },
+  {
+    name: "Name3",
+    surname: "Surname3",
+    phone: "07927000003",
+  },
+  {
+    name: "Name4",
+    surname: "Surname4",
+    phone: "07927000004",
+  },
+  {
+    name: "Name5",
+    surname: "Surname5",
+    phone: "07927000005",
+  },
+];
+
 const Content = () => {
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date());
+  const [list, setList] = useState(initialList);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const phonebookList = [
-    {
-      name: "Name1",
-      surname: "Surname1",
-      phone: "07927000001",
-    },
-    {
-      name: "Name2",
-      surname: "Surname2",
-      phone: "07927000002",
-    },
-    {
-      name: "Name3",
-      surname: "Surname3",
-      phone: "07927000003",
-    },
-    {
-      name: "Name4",
-      surname: "Surname4",
-      phone: "07927000004",
-    },
-    {
-      name: "Name5",
-      surname: "Surname5",
-      phone: "07927000005",
-    },
-  ];
 
   return (
     <div className="content">
