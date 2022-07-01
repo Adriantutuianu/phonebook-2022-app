@@ -9,7 +9,6 @@
 }
 
 .form {
-  width: 400px;
   background-color: var(--primary-color);
   padding: 20px;
 }
@@ -23,4 +22,11 @@
 .btn-primary {
   background-color: var(--third-color);
   border: none;
+  margin-top: 30px;
+}
+
+h2 {
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--fifth-color);
+  border-top: 2px solid var(--fifth-color);
 }

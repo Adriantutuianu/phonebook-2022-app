@@ -44,18 +44,24 @@ const Content = () => {
   };
   // !important: Loop through array of objects and displayed them.
   const displayedList = list.map((item) => {
-    return <ListGroup.Item>{item.name}</ListGroup.Item>;
+    return (
+      <ListGroup.Item>
+        <span>
+          {" "}
+          {item.name}
+          {item.surname}
+          {item.phone}
+        </span>
+      </ListGroup.Item>
+    );
   });
 
   return (
     <div className="content">
+      <h2>Contacts</h2>
       <div className="form">
         <div className="line">
-          <p>Contacts</p>
           <ListGroup>{displayedList}</ListGroup>
-          <Button variant="primary" onClick={handleShowModal}>
-            Add contact
-          </Button>
         </div>
         <Modal show={show} onHide={handleCloseModal}>
           <Modal.Header closeButton>
@@ -72,6 +78,9 @@ const Content = () => {
           </Modal.Footer>
         </Modal>
       </div>
+      <Button variant="primary" onClick={handleShowModal}>
+        Add contact
+      </Button>
       <div className="clock">
         <h4>Time :</h4>
         <Clock date={date} setDate={setDate} />
