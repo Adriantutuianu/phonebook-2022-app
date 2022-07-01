@@ -99,7 +99,7 @@ const Content = () => {
         </Modal>
       </div>
       <Button
-        variant="primary"
+        variant="secondary"
         className="btn-add-contact"
         onClick={handleShowModal}
       >

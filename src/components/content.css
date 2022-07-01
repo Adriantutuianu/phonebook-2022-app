@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--seventh-color);
+  background-color: var(--secondary-color);
 }
 
 .form {
@@ -25,6 +25,7 @@
 }
 .btn-add-contact {
   margin-top: 30px;
+  background-color: var(--third-color);
 }
 
 h2 {
@@ -47,4 +48,8 @@ h2 {
 
 .modal-body {
   border-bottom: 2px solid var(--third-color);
+}
+
+.modal-content {
+  background-color: var(--secondary-color);
 }
