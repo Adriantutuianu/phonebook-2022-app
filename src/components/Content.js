@@ -42,7 +42,7 @@ const Content = () => {
     setShow(false);
     // extract form data and add it to the list
   };
-
+  // !important: Loop through array of objects and displayed them.
   const displayedList = list.map((item) => {
     return <ListGroup.Item>{item.name}</ListGroup.Item>;
   });

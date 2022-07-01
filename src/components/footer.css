@@ -4,7 +4,7 @@ footer {
   align-items: center;
   height: 67px;
   font-weight: 550;
-  color: var(--sixth-color);
-  background-color: var(--primary-color);
-  border-top: 2px solid var(--sixth-color);
+  color: var(--secondary-color);
+  background-color: var(--eigth-color);
+  border-top: 2px solid var(--third-color);
 }
