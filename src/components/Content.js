@@ -1,6 +1,6 @@
 import "./content.css";
 import React, { useState } from "react";
-import { Modal, Button, ListGroup } from "react-bootstrap";
+import { Modal, Button, ListGroup, Form, InputGroup } from "react-bootstrap";
 import Clock from "./Clock";
 
 const initialList = [
@@ -46,8 +46,7 @@ const Content = () => {
   const displayedList = list.map((item) => {
     return (
       <ListGroup.Item>
-        <span>
-          {" "}
+        <span className="list-group">
           {item.name}
           {item.surname}
           {item.phone}
@@ -65,9 +64,30 @@ const Content = () => {
         </div>
         <Modal show={show} onHide={handleCloseModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Add Contact:</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Body>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                Name:
+              </InputGroup.Text>
+              <Form.Control />
+            </InputGroup>
+
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                Surname:
+              </InputGroup.Text>
+              <Form.Control />
+            </InputGroup>
+
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                Phone:
+              </InputGroup.Text>
+              <Form.Control />
+            </InputGroup>
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="danger" onClick={handleCloseModal}>
               Cancel
@@ -78,7 +98,11 @@ const Content = () => {
           </Modal.Footer>
         </Modal>
       </div>
-      <Button variant="primary" onClick={handleShowModal}>
+      <Button
+        variant="primary"
+        className="btn-add-contact"
+        onClick={handleShowModal}
+      >
         Add contact
       </Button>
       <div className="clock">

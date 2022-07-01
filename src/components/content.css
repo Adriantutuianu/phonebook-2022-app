@@ -22,6 +22,8 @@
 .btn-primary {
   background-color: var(--third-color);
   border: none;
+}
+.btn-add-contact {
   margin-top: 30px;
 }
 
@@ -29,4 +31,8 @@ h2 {
   margin-bottom: 30px;
   border-bottom: 2px solid var(--fifth-color);
   border-top: 2px solid var(--fifth-color);
+}
+
+.mb-3-1 {
+  width: 100px;
 }
