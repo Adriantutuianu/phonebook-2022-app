@@ -89,10 +89,10 @@ const Content = () => {
             </InputGroup>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="danger" onClick={handleCloseModal}>
+            <Button variant="warning" onClick={handleCloseModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={handleSubmit}>
+            <Button variant="secondary" onClick={handleSubmit}>
               Create Contact
             </Button>
           </Modal.Footer>
