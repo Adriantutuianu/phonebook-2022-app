@@ -53,3 +53,7 @@ h2 {
 .modal-content {
   background-color: var(--secondary-color);
 }
+
+.list-item {
+  margin-right: 7px;
+}

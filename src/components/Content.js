@@ -1,6 +1,13 @@
 import "./content.css";
 import React, { useState } from "react";
-import { Modal, Button, ListGroup, Form, InputGroup } from "react-bootstrap";
+import {
+  Modal,
+  Button,
+  ListGroup,
+  Form,
+  InputGroup,
+  FormGroup,
+} from "react-bootstrap";
 import Clock from "./Clock";
 
 const initialList = [
@@ -45,16 +52,13 @@ const Content = () => {
   // !important: Loop through array of objects and displayed them.
   const displayedList = list.map((item) => {
     return (
-      <ListGroup.Item>
-        <span className="list-group">
-          {item.name}
-          {item.surname}
-          {item.phone}
-        </span>
+      <ListGroup.Item key={item.phone}>
+        <span className="list-item name">{item.name} </span>
+        <span className="list-item surname">{item.surname}</span>
+        <span className="list-item phone">{item.phone}</span>
       </ListGroup.Item>
     );
   });
-
   return (
     <div className="content">
       <h2>Contacts</h2>
@@ -63,39 +67,43 @@ const Content = () => {
           <ListGroup>{displayedList}</ListGroup>
         </div>
         <Modal show={show} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Add Contact:</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                Name:
-              </InputGroup.Text>
-              <Form.Control />
-            </InputGroup>
+          <Form onSubmit={handleSubmit}>
+            <FormGroup>
+              <Modal.Header closeButton>
+                <Modal.Title>Add Contact:</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <InputGroup className="mb-3">
+                  <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                    Name:
+                  </InputGroup.Text>
+                  <Form.Control />
+                </InputGroup>
 
-            <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                Surname:
-              </InputGroup.Text>
-              <Form.Control />
-            </InputGroup>
+                <InputGroup className="mb-3">
+                  <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                    Surname:
+                  </InputGroup.Text>
+                  <Form.Control />
+                </InputGroup>
 
-            <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                Phone:
-              </InputGroup.Text>
-              <Form.Control />
-            </InputGroup>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="warning" onClick={handleCloseModal}>
-              Cancel
-            </Button>
-            <Button variant="secondary" onClick={handleSubmit}>
-              Create Contact
-            </Button>
-          </Modal.Footer>
+                <InputGroup className="mb-3">
+                  <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                    Phone:
+                  </InputGroup.Text>
+                  <Form.Control />
+                </InputGroup>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="warning" onClick={handleCloseModal}>
+                  Cancel
+                </Button>
+                <Button type="submit" variant="secondary">
+                  Create Contact
+                </Button>
+              </Modal.Footer>
+            </FormGroup>
+          </Form>
         </Modal>
       </div>
       <Button
