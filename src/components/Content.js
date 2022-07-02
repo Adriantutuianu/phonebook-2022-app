@@ -45,17 +45,35 @@ const Content = () => {
 
   const handleCloseModal = () => setShow(false);
   const handleShowModal = () => setShow(true);
-  const handleSubmit = () => {
-    setShow(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    for (let [key, value] of Object.entries(form)) {
+      console.log(key);
+      console.log(value);
+      const newContact = {};
+      if ((key = 0)) {
+        newContact.name = value.value;
+      }
+      if ((key = 1)) {
+        newContact.surname = value.value;
+      }
+      if ((key = 2)) {
+        newContact.phone = value.value;
+      }
+      console.log("new contact", newContact);
+    }
+    // setShow(false);
     // extract form data and add it to the list
   };
   // !important: Loop through array of objects and displayed them.
   const displayedList = list.map((item) => {
     return (
-      <ListGroup.Item key={item.phone}>
-        <span className="list-item name">{item.name} </span>
-        <span className="list-item surname">{item.surname}</span>
-        <span className="list-item phone">{item.phone}</span>
+      <ListGroup.Item className="list-item" key={item.phone}>
+        <span className="col-item name">{item.name}</span>
+        <span className="col-item surname">{item.surname}</span>
+        <span className="col-item line">-</span>
+        <span className="col-item phone">{item.phone}</span>
       </ListGroup.Item>
     );
   });
@@ -63,47 +81,38 @@ const Content = () => {
     <div className="content">
       <h2>Contacts</h2>
       <div className="form">
-        <div className="line">
+        <div className="flex">
           <ListGroup>{displayedList}</ListGroup>
         </div>
         <Modal show={show} onHide={handleCloseModal}>
-          <Form onSubmit={handleSubmit}>
-            <FormGroup>
-              <Modal.Header closeButton>
-                <Modal.Title>Add Contact:</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                    Name:
-                  </InputGroup.Text>
-                  <Form.Control />
-                </InputGroup>
-
-                <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                    Surname:
-                  </InputGroup.Text>
-                  <Form.Control />
-                </InputGroup>
-
-                <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                    Phone:
-                  </InputGroup.Text>
-                  <Form.Control />
-                </InputGroup>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="warning" onClick={handleCloseModal}>
-                  Cancel
-                </Button>
-                <Button type="submit" variant="secondary">
-                  Create Contact
-                </Button>
-              </Modal.Footer>
-            </FormGroup>
-          </Form>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Contact:</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form onSubmit={handleSubmit}>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                  Name:
+                </InputGroup.Text>
+                <Form.Control />
+              </InputGroup>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                  Surname:
+                </InputGroup.Text>
+                <Form.Control />
+              </InputGroup>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                  Phone:
+                </InputGroup.Text>
+                <Form.Control />
+              </InputGroup>{" "}
+              <Button type="submit" variant="secondary">
+                Create Contact
+              </Button>
+            </Form>
+          </Modal.Body>
         </Modal>
       </div>
       <Button

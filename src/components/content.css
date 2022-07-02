@@ -13,7 +13,7 @@
   padding: 20px;
 }
 
-.line {
+.flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,6 +54,6 @@ h2 {
   background-color: var(--secondary-color);
 }
 
-.list-item {
+.list-item .col-item {
   margin-right: 7px;
 }
