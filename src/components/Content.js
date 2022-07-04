@@ -60,9 +60,11 @@ const Content = () => {
       surname: lastName,
       phone: phoneNumber,
     };
+
     // spread operator to add a new contact to initial list.
     setList([...list, newContact]);
     handleCloseModal();
+
     // reset inputs value
     setFirstName("");
     setLastName("");
@@ -70,9 +72,9 @@ const Content = () => {
   };
 
   // !important: Loop through array of objects and displayed them.
-  const displayedList = list.map((item) => {
+  const displayedList = list.map((item, index) => {
     return (
-      <ListGroup.Item className="list-item" key={item.phone}>
+      <ListGroup.Item className="list-item" key={index}>
         <span className="col-item name">{item.name}</span>
         <span className="col-item surname">{item.surname}</span>
         <span className="col-item line">-</span>
