@@ -54,6 +54,14 @@ const Content = () => {
     console.log("first", firstName);
     console.log("last", lastName);
     console.log("phone", phoneNumber);
+
+    const newContact = {
+      name: firstName,
+      surname: lastName,
+      phone: phoneNumber,
+    };
+    // spread operator to add a new contact to initial list.
+    setList([...list, newContact]);
   };
 
   // !important: Loop through array of objects and displayed them.
