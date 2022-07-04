@@ -62,6 +62,11 @@ const Content = () => {
     };
     // spread operator to add a new contact to initial list.
     setList([...list, newContact]);
+    handleCloseModal();
+    // reset inputs value
+    setFirstName("");
+    setLastName("");
+    setPhoneNumber("");
   };
 
   // !important: Loop through array of objects and displayed them.
