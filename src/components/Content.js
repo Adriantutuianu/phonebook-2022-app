@@ -42,6 +42,9 @@ const Content = () => {
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date());
   const [list, setList] = useState(initialList);
+  const [firstName, setFirstName] = useState();
+  const [surname, setSurname] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
 
   const handleCloseModal = () => setShow(false);
   const handleShowModal = () => setShow(true);
