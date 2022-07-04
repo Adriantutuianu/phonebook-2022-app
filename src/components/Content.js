@@ -112,28 +112,19 @@ const Content = () => {
               <InputGroup.Text id="basic-addon1" className="mb-3-1">
                 Name:
               </InputGroup.Text>
-              <Form.Control
-                onChange={(e) => handleChangeFirstName(e)}
-                value={firstName}
-              />
+              <Form.Control onChange={(e) => handleChangeFirstName(e)} />
             </InputGroup>
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1" className="mb-3-1">
                 Surname:
               </InputGroup.Text>
-              <Form.Control
-                onChange={(e) => handleChangeLastName(e)}
-                value={lastName}
-              />
+              <Form.Control onChange={(e) => handleChangeLastName(e)} />
             </InputGroup>
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1" className="mb-3-1">
                 Phone:
               </InputGroup.Text>
-              <Form.Control
-                onChange={(e) => handleChangePhoneNumber(e)}
-                value={phoneNumber}
-              />
+              <Form.Control onChange={(e) => handleChangePhoneNumber(e)} />
             </InputGroup>{" "}
             <Button type="submit" onClick={handleSubmit} variant="secondary">
               Create Contact
