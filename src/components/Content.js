@@ -43,32 +43,19 @@ const Content = () => {
   const [date, setDate] = useState(new Date());
   const [list, setList] = useState(initialList);
   const [firstName, setFirstName] = useState();
-  const [surname, setSurname] = useState();
+  const [lastName, setLastName] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
 
   const handleCloseModal = () => setShow(false);
   const handleShowModal = () => setShow(true);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    for (let [key, value] of Object.entries(form)) {
-      console.log(key);
-      console.log(value);
-      const newContact = {};
-      if ((key = 0)) {
-        newContact.name = value.value;
-      }
-      if ((key = 1)) {
-        newContact.surname = value.value;
-      }
-      if ((key = 2)) {
-        newContact.phone = value.value;
-      }
-      console.log("new contact", newContact);
-    }
-    // setShow(false);
-    // extract form data and add it to the list
+    console.log("first", firstName);
+    console.log("last", lastName);
+    console.log("phone", phoneNumber);
   };
+
   // !important: Loop through array of objects and displayed them.
   const displayedList = list.map((item) => {
     return (
@@ -80,6 +67,20 @@ const Content = () => {
       </ListGroup.Item>
     );
   });
+
+  const handleChangeFirstName = (e) => {
+    const newFirstName = e.target.value;
+    setFirstName(newFirstName);
+  };
+  const handleChangeLastName = (e) => {
+    const newLastName = e.target.value;
+    setLastName(newLastName);
+  };
+  const handleChangePhoneNumber = (e) => {
+    const newPhoneNumber = e.target.value;
+    setPhoneNumber(newPhoneNumber);
+  };
+
   return (
     <div className="content">
       <h2>Contacts</h2>
@@ -92,29 +93,36 @@ const Content = () => {
             <Modal.Title>Add Contact:</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={handleSubmit}>
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                  Name:
-                </InputGroup.Text>
-                <Form.Control />
-              </InputGroup>
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                  Surname:
-                </InputGroup.Text>
-                <Form.Control />
-              </InputGroup>
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1" className="mb-3-1">
-                  Phone:
-                </InputGroup.Text>
-                <Form.Control />
-              </InputGroup>{" "}
-              <Button type="submit" variant="secondary">
-                Create Contact
-              </Button>
-            </Form>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                Name:
+              </InputGroup.Text>
+              <Form.Control
+                onChange={(e) => handleChangeFirstName(e)}
+                value={firstName}
+              />
+            </InputGroup>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                Surname:
+              </InputGroup.Text>
+              <Form.Control
+                onChange={(e) => handleChangeLastName(e)}
+                value={lastName}
+              />
+            </InputGroup>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1" className="mb-3-1">
+                Phone:
+              </InputGroup.Text>
+              <Form.Control
+                onChange={(e) => handleChangePhoneNumber(e)}
+                value={phoneNumber}
+              />
+            </InputGroup>{" "}
+            <Button type="submit" onClick={handleSubmit} variant="secondary">
+              Create Contact
+            </Button>
           </Modal.Body>
         </Modal>
       </div>
